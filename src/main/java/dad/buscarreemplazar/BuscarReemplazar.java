@@ -93,7 +93,21 @@ public class BuscarReemplazar extends Application {
 		
 		root = new BorderPane();
 		parteIzquierda = new GridPane();
+		//parteIzquierda.setGridLinesVisible(true);
 		parteDerecha = new VBox();
+		
+		ColumnConstraints[] cols = {
+				new ColumnConstraints(),
+				new ColumnConstraints(),
+			};
+			
+		cols[0].setHalignment(HPos.LEFT);
+			
+		
+		parteIzquierda.getColumnConstraints().setAll(cols);
+		cols[1].setHgrow(Priority.ALWAYS);
+		cols[1].setFillWidth(true);
+
 		
 		//COLOCAMOS LOS ELEMENTOS
 		
@@ -119,7 +133,7 @@ public class BuscarReemplazar extends Application {
 		*/
 		
 		//AÑADIENDO LOS ELEMENTOS AL PADRE
-		root.setLeft(parteIzquierda);
+		root.setCenter(parteIzquierda);
 		root.setRight(parteDerecha);
 		
 		Scene scene = new Scene(root, 550, 200);
